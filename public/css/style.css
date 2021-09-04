@@ -1,0 +1,35 @@
+header {
+  background-color: lightblue
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+#body {
+  background-color: floralwhite;
+}
+
+#welcome {
+  margin-top: 200px;
+  margin-bottom: 100px;
+  color: darkcyan;
+}
+
+
+#books_table {
+  background-color:lightblue;
+}
+
+h1, h2, h4 {
+  color: darkcyan;
+}
+
+a {
+  color: darkcyan;
+}
+
+.btn {
+  color: floralwhite;
+  background-color: darkcyan;
+  border: none;
+}
