@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Dean Stanley Official Website - Recommended Books</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body id="body">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Dean Stanley</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="user_info.html">About Me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="books.html">Recommended Books</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="row">
+      <div class="container">
+        <table class="table table-striped table-hover" id="books_table">
+          <thead>
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Author(s)</th>
+              <th scope="col">Year Published</th>
+              <th scope="col">Publisher</th>
+              <th scope="col">Page Count</th>
+              <th scope="col">MSRP</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A Hard Day's Write</td>
+              <td>Steve Turner</td>
+              <td>1994</td>
+              <td>Hachette Book Group</td>
+              <td>268</td>
+              <td>US $30.00</td>
+            </tr>
+            <tr>
+              <td>Music by the Numbers</td>
+              <td>Eli Maor</td>
+              <td>2018</td>
+              <td>Harper Collins</td>
+              <td>175</td>
+              <td>US $20.00</td>
+            </tr>
+            <tr>
+              <td>The Shining</td>
+              <td>Stephen King</td>
+              <td>1977</td>
+              <td>Penguin/Random House</td>
+              <td>477</td>
+              <td>US $45.00</td>
+            </tr>
+            <tr>
+              <td>Dreaming the Beatles</td>
+              <td>Rob Sheffield</td>
+              <td>2017</td>
+              <td>Macmillan</td>
+              <td>243</td>
+              <td>US $27.50</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="row g-3 justify-content-center">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+          <h4>Use the following form to add a book to the table!</h4>
+        </div>
+        <div class="col-md-2">
+        </div>
+      </div>
+      <form class="row g-3 justify-content-center">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-4">
+          <label for="inputTitle" class="form-label">Title</label>
+          <input type="text" class="form-control" id="inputTitle" placeholder="Title">
+        </div>
+        <div class="col-md-4">
+          <label for="inputAuthor" class="form-label">Author(s)</label>
+          <input type="text" class="form-control" id="inputAuthor" placeholder="Author(s)">
+        </div>
+        <div class="col-md-2">
+        </div>
+
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-4">
+          <label for="inputYearPublished" class="form-label">Year Published</label>
+          <input type="text" class="form-control" id="inputYearPublished" placeholder="YYYY">
+        </div>
+        <div class="col-md-4">
+          <label for="inputPublisher" class="form-label">Publisher</label>
+          <input type="text" class="form-control" id="inputPublisher" placeholder="Publisher">
+        </div>
+        <div class="col-md-2">
+        </div>
+
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-4">
+          <label for="inputPageCount" class="form-label">Page Count</label>
+          <input type="text" class="form-control" id="inputPageCount" placeholder="Page Count">
+        </div>
+        <div class="col-md-4">
+          <label for="inputMSRP" class="form-label">MSRP</label>
+          <input type="text" id="inputMSRP" class="form-control" placeholder="MSRP, example: US $30.00">
+        </div>
+        <div class="col-md-2">
+        </div>
+
+        <div class="col-1">
+          <button type="submit" class="btn btn-primary">Add Book</button>
+        </div>
+      </form>
+    </main>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  </body>
+</html>
