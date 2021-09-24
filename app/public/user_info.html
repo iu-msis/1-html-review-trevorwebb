@@ -39,17 +39,30 @@
 
     <main class="row">
       <div class="row g-5 justify-content-center">
-        <div class="col-2">
-          <h2>About Me</h2>
-        </div>
-        <div id="ProfileApp" class="col-12">
-          <img v-bind:src="person.picture.large">
-          <h5>Name: {{person.name.first}} {{person.name.last}}</h5>
-          <h5>Country:{{person.location.country}}</h5>
-          <h5>Birthdate: {{prettyBirthday}}</h5>
-          <h5>Age: {{person.dob.age}}</h5>
-          <h5>Email: <a v-bind:href="'mailto:'+person.email">{{person.email}}</a></h5>
-        </div>
+        <center>
+          <div class="col-12">
+            <h2>About Me</h2>
+          </div>
+        
+          <div id="ProfileApp" class="col-12">
+            <form v-on:submit.prevent="fetchUserData">
+              <button type="submit">Reload</button>
+            </form>
+            <div v-if="person" class="col-4">
+              <img v-bind:src="person.picture.large">
+            </div>
+            <div v-if="person" class="col-8">
+              <h5>Name: {{person.name.first}} {{person.name.last}}</h5>
+              <h5>Country: {{person.location.country}}</h5>
+              <h5>Birthdate: {{prettyBirthday}}</h5>
+              <h5>Age: {{person.dob.age}}</h5>
+              <h5>Email: <a v-bind:href="'mailto:'+person.email">{{person.email}}</a></h5>
+            </div>
+          </div>
+          
+          
+        </center>
+
       </div>
       <div class="row g-5 justify-content-center">
         <div class="col-2">

@@ -2,7 +2,7 @@ const Profile = {
 
     data() {
         return {
-            "person": {},
+            "person": undefined,
         }
     },
 
@@ -12,21 +12,25 @@ const Profile = {
             .format('D MMM YYYY');
         }
     },  
-    created() {
-        fetch('https://randomuser.me/api/')
+    methods: {
+        fetchUserData() {
+            fetch('https://randomuser.me/api/')
             .then(response => response.json())
             .then((parsedJson) => {
                 console.log(parsedJson);
                 this.person = parsedJson.results[0]
                 console.log("C");
-        })
-        .catch( err => {
-            console.error(err)
-        })
+            })
+            .catch( err => {
+                console.error(err)
+            })
 
-        console.log("B");
+            console.log("B");
+        }
     },
-    
+    created() {
+        this.fetchUserData();
+    }
   }
   
 Vue.createApp(Profile).mount('#ProfileApp');
