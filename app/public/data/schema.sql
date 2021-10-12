@@ -1,5 +1,5 @@
 CREATE DATABASE IF NOT EXISTS msisdb;
-USE msisdb
+USE msisdb;
  
 DROP TABLE IF EXISTS books;
 CREATE TABLE books (
