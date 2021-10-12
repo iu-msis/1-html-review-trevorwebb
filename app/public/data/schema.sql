@@ -3,7 +3,7 @@ USE msisdb;
  
 DROP TABLE IF EXISTS books;
 CREATE TABLE books (
-    bookId int PRIMARY KEY auto_increment,
+    bookId int PRIMARY KEY AUTO_INCREMENT,
     title varchar(48) NOT NULL,
     author varchar(48),
     yearPublished int,

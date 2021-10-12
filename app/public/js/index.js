@@ -26,12 +26,27 @@ const Profile = {
             })
 
             console.log("B");
+        },
+
+        fetchBookData() {
+            fetch('api/books/')
+            .then( response => response.json() )
+            .then( (responseJson) => {
+                console.log(responseJson);
+                this.books = responseJson;
+            })
+            .catch( (err) => {
+                console.error(err);
+            })
+            .catch( (error) => {
+                console.error(error);
+            });
+
         }
-    },
+    },   
     created() {
         this.fetchUserData();
     }
-  }
+}
   
 Vue.createApp(Profile).mount('#ProfileApp');
-
