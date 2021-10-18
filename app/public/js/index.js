@@ -27,7 +27,23 @@ const Profile = {
 
             console.log("B");
         },
+    },   
+    created() {
+        this.fetchUserData();
+    }
+}
+  
+Vue.createApp(Profile).mount('#ProfileApp');
 
+const Books = {
+
+    data() {
+        return {
+            "book": undefined,
+        }
+    },
+
+    methods: {
         fetchBookData() {
             fetch('api/books/')
             .then( response => response.json() )
@@ -45,8 +61,8 @@ const Profile = {
         }
     },   
     created() {
-        this.fetchUserData();
+        this.fetchBookData();
     }
 }
   
-Vue.createApp(Profile).mount('#ProfileApp');
+Vue.createApp(Books).mount('#BooksApp');

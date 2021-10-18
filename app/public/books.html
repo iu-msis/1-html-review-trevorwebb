@@ -36,8 +36,8 @@
       </div>
     </nav>
 
-    <main class="row">
-      <div id="ProfileApp" class="container">
+    <main>
+      <div class="row" id="BooksApp">
         <table class="table table-striped table-hover" id="books_table">
           <thead>
             <tr>
@@ -50,13 +50,13 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="books in books">
-              <td>{{ books.title }}</td>
-              <td>{{ books.author }}</td>
-              <td>{{ books.yearPublished }}</td>
-              <td>{{ books.publisher }}</td>
-              <td>{{ books.pgCount }}</td>
-              <td>{{ books.msrp }}</td>
+            <tr v-for="book in Books">
+              <td>{{ book.title }}</td>
+              <td>{{ book.author }}</td>
+              <td>{{ book.yearPublished }}</td>
+              <td>{{ book.publisher }}</td>
+              <td>{{ book.pgCount }}</td>
+              <td>{{ book.msrp }}</td>
             </tr>
           </tbody>
         </table>
