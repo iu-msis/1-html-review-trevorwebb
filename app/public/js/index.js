@@ -40,8 +40,6 @@ const Books = {
     data() {
         return {
             books: [],
-            selectedBook: null,
-            bookForm: {}
         }
     }
     methods: {
