@@ -34,35 +34,3 @@ const Profile = {
 }
   
 Vue.createApp(Profile).mount('#ProfileApp');
-
-const Books = {
-
-    data() {
-        return {
-            books: [],
-        }
-    }
-    methods: {
-        fetchBookData() {
-            console.log("Fetching books");
-            fetch('api/books/')
-            .then( response => response.json() )
-            .then( (responseJson) => {
-                console.log(responseJson);
-                this.books = responseJson;
-            })
-            .catch( (err) => {
-                console.error(err);
-            })
-            .catch( (error) => {
-                console.error(error);
-            });
-
-        }
-    },   
-    created() {
-        this.fetchBookData();
-    }
-}
-  
-Vue.createApp(Books).mount('#booksApp');
