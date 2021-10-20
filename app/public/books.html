@@ -9,7 +9,7 @@
 
     <script src="https://unpkg.com/vue@next"></script>
 
-    <title>Dean Stanley Official Website - Recommended Books</title>
+    <title>Trevor's D&S Homework - Recommended Books</title>
    
     
 
@@ -40,83 +40,84 @@
 
     <main>
       <div class="row" id="booksApp">
-        <table class="table table-striped table-hover" id="books_table">
-          <thead>
-            <tr>
-              <th scope="col">Title</th>
-              <th scope="col">Author(s)</th>
-              <th scope="col">Year Published</th>
-              <th scope="col">Publisher</th>
-              <th scope="col">Page Count</th>
-              <th scope="col">MSRP</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="book in books">
-              <td>{{ book.title }}</td>
-              <td>{{ book.author }}</td>
-              <td>{{ book.yearPublished }}</td>
-              <td>{{ book.publisher }}</td>
-              <td>{{ book.pgCount }}</td>
-              <td>{{ book.msrp }}</td>
-            </tr>
-          </tbody>
-        </table>
+        <div>
+          <table class="table table-striped table-hover" id="books_table">
+            <thead>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Author(s)</th>
+                <th scope="col">Year Published</th>
+                <th scope="col">Publisher</th>
+                <th scope="col">Page Count</th>
+                <th scope="col">MSRP</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="book in books">
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.yearPublished }}</td>
+                <td>{{ book.publisher }}</td>
+                <td>{{ book.pgCount }}</td>
+                <td>{{ book.msrp }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="row g-3 justify-content-center">
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-8">
+            <h4>Use the following form to add a book to the table!</h4>
+          </div>
+          <div class="col-md-2">
+          </div>
+        </div>
+        <form class="row g-3 justify-content-center"  v-on:submit.prevent="postNewBook">
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-4">
+            <label for="inputTitle" class="form-label">Title</label>
+            <input type="text" class="form-control" v-model="bookForm.title" id="inputTitle" placeholder="Title">
+          </div>
+          <div class="col-md-4">
+            <label for="inputAuthor" class="form-label">Author(s)</label>
+            <input type="text" class="form-control" v-model="bookForm.author" id="inputAuthor" placeholder="Author(s)">
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-4">
+            <label for="inputYearPublished" class="form-label">Year Published</label>
+            <input type="text" class="form-control" v-model="bookForm.yearPublished" id="inputYearPublished" placeholder="YYYY">
+          </div>
+          <div class="col-md-4">
+            <label for="inputPublisher" class="form-label">Publisher</label>
+            <input type="text" class="form-control" v-model="bookForm.publisher" id="inputPublisher" placeholder="Publisher">
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-4">
+            <label for="inputPageCount" class="form-label">Page Count</label>
+            <input type="text" class="form-control" v-model="bookForm.pgCount" id="inputPageCount" placeholder="Page Count">
+          </div>
+          <div class="col-md-4">
+            <label for="inputMSRP" class="form-label">MSRP</label>
+            <input type="text" v-model="bookForm.msrp" id="inputMSRP" class="form-control" placeholder="MSRP, example: $30.00">
+          </div>
+          <div class="col-md-2">
+          </div>
+  
+          <div class="col-1">
+            <button type="submit" class="btn btn-primary">Add Book</button>
+          </div>
+        </form>
       </div>
       
-      <div class="row g-3 justify-content-center">
-        <div class="col-md-2">
-        </div>
-        <div class="col-md-8">
-          <h4>Use the following form to add a book to the table!</h4>
-        </div>
-        <div class="col-md-2">
-        </div>
-      </div>
-      <form class="row g-3 justify-content-center">
-        <div class="col-md-2">
-        </div>
-        <div class="col-md-4">
-          <label for="inputTitle" class="form-label">Title</label>
-          <input type="text" class="form-control" id="inputTitle" placeholder="Title">
-        </div>
-        <div class="col-md-4">
-          <label for="inputAuthor" class="form-label">Author(s)</label>
-          <input type="text" class="form-control" id="inputAuthor" placeholder="Author(s)">
-        </div>
-        <div class="col-md-2">
-        </div>
-
-        <div class="col-md-2">
-        </div>
-        <div class="col-md-4">
-          <label for="inputYearPublished" class="form-label">Year Published</label>
-          <input type="text" class="form-control" id="inputYearPublished" placeholder="YYYY">
-        </div>
-        <div class="col-md-4">
-          <label for="inputPublisher" class="form-label">Publisher</label>
-          <input type="text" class="form-control" id="inputPublisher" placeholder="Publisher">
-        </div>
-        <div class="col-md-2">
-        </div>
-
-        <div class="col-md-2">
-        </div>
-        <div class="col-md-4">
-          <label for="inputPageCount" class="form-label">Page Count</label>
-          <input type="text" class="form-control" id="inputPageCount" placeholder="Page Count">
-        </div>
-        <div class="col-md-4">
-          <label for="inputMSRP" class="form-label">MSRP</label>
-          <input type="text" id="inputMSRP" class="form-control" placeholder="MSRP, example: US $30.00">
-        </div>
-        <div class="col-md-2">
-        </div>
-
-        <div class="col-1">
-          <button type="submit" class="btn btn-primary">Add Book</button>
-        </div>
-      </form>
+      
     </main>
 
     <script src="js/bookdata.js"></script>
