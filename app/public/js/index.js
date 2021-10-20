@@ -39,12 +39,14 @@ const Books = {
 
     data() {
         return {
-            "book": undefined,
+            books: [],
+            selectedBook: null,
+            bookForm: {}
         }
-    },
-
+    }
     methods: {
         fetchBookData() {
+            console.log("Fetching books");
             fetch('api/books/')
             .then( response => response.json() )
             .then( (responseJson) => {
@@ -65,4 +67,4 @@ const Books = {
     }
 }
   
-Vue.createApp(Books).mount('#BooksApp');
+Vue.createApp(Books).mount('#booksApp');
