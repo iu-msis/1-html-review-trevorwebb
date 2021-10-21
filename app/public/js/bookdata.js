@@ -50,9 +50,6 @@ const Books = {
                 console.log("Returned from post:", json);
                 // TODO: test a result was returned!
                 this.offers = json;
-            
-                // reset the form
-                this.handleResetEdit();
           });
         },
     },   
