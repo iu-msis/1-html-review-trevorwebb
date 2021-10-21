@@ -49,7 +49,9 @@ const Books = {
             .then( json => {
                 console.log("Returned from post:", json);
                 // TODO: test a result was returned!
-                this.offers = json;
+                this.books = json;
+
+                    this.bookForm = {};
           });
         },
     },   
