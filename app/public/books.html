@@ -50,6 +50,7 @@
                 <th scope="col">Publisher</th>
                 <th scope="col">Page Count</th>
                 <th scope="col">MSRP</th>
+                <th scope="col">Edit/Delete</th>
               </tr>
             </thead>
             <tbody>
@@ -60,6 +61,10 @@
                 <td>{{ book.publisher }}</td>
                 <td>{{ book.pgCount }}</td>
                 <td>{{ book.msrp }}</td>
+                <td>
+                  <button type="button" v-on:click="handleEditBook(book)" class="btn btn-outline-secondary btn-sm">Edit</button>
+                  <button type="button" v-on:click="postDeleteBook(book)" class="btn btn-outline-secondary btn-sm">Delete</button>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -68,12 +73,12 @@
           <div class="col-md-2">
           </div>
           <div class="col-md-8">
-            <h4>Use the following form to add a book to the table!</h4>
+            <h4>{{ selectedBook === null ? "Add " : "Edit " }} Book</h4>
           </div>
           <div class="col-md-2">
           </div>
         </div>
-        <form class="row g-3 justify-content-center"  v-on:submit.prevent="postNewBook">
+        <form class="row g-3 justify-content-center"  v-on:submit.prevent="postBook">
           <div class="col-md-2">
           </div>
           <div class="col-md-4">
@@ -112,7 +117,10 @@
           </div>
   
           <div class="col-1">
-            <button type="submit" class="btn btn-primary">Add Book</button>
+            <button type="submit" class="btn btn-primary">{{ selectedBook === null ? "Add " : "Edit " }} Book</button>
+            <button type="button" class="btn btn-outline-secondary" 
+                 v-if="selectedBook"
+                 v-on:click="handleResetEdit">Cancel Edit</button>
           </div>
         </form>
       </div>
