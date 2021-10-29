@@ -63,7 +63,6 @@ const Books = {
               });
         },
         postNewBook(evt) {        
-            this.bookForm.bookId = this.selectedBook.bookId;
             
             console.log("Creating!", this.bookForm);
 
@@ -111,8 +110,8 @@ const Books = {
                 this.handleResetEdit();
               });
           },
-          handleEditBook(books) {
-              this.selectedBook = books;
+          handleEditBook(book) {
+              this.selectedBook = book;
               this.bookForm = Object.assign({}, this.selectedBook);
           },
           handleResetEdit() {

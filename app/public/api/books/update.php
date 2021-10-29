@@ -46,6 +46,7 @@ $stmt->execute([
   $_POST['author'],
   $_POST['yearPublished'],
   $_POST['publisher'],
+  $_POST['pgCount'],
   $_POST['msrp'],
   $_POST['bookId']
 ]);
