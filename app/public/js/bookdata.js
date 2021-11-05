@@ -63,7 +63,7 @@ const Books = {
               });
         },
         postNewBook(evt) {        
-            
+
             console.log("Creating!", this.bookForm);
 
             fetch('api/books/create.php', {
